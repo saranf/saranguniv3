@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -152,16 +153,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#about">About</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#services">사역팀 소개</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#services">사역팀 소개</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#portfolio">예베 사진</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#portfolio">예베 사진</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="index.html#contact">연락처</a>
+              <a class="nav-link js-scroll-trigger" href="index.php#contact">연락처</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="login.php">로그인</a>
@@ -192,27 +193,24 @@
     </header>
     <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" action="./login/login_db.php" method='post'>
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
       <label><b>사용자 아이디</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name=uname required>
 
       <label><b>사용자 비밀번호</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name=psw required>
 
       <button type="submit">로그인</button>
-      <label>
-        <input type="checkbox" checked="checked"> 기억하시겠습니까?
-      </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">뒤로가기</button>
-      <span class="psw">비밀번호를 <a href="#">잊어버리셧나요?</a></span>
+      
     </div>
   </form>
 </div>

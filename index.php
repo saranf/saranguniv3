@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    
+    if(!isset($_SESSION['login_user'])){header("location: login.php");}
+    
+    $login_user = $_SESSION['login_user'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,15 +54,16 @@
               <a class="nav-link js-scroll-trigger" href="#portfolio">예베 사진</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">연락처</a>
+              <a class="nav-link js-scroll-trigger" href="#contact"> 연락처</a>
             </li>
+               
             <?php
-              if(session['sucess']){
+            if(!isset($_SESSION['login_user'])){
             ?>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">연락처</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">게시판</a>
             </li>
-          <?php }?>
+            <?php } ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="login.php">로그인</a>
             </li>
