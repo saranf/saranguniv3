@@ -1,9 +1,9 @@
 <?php 
     session_start();
     
-    if(!isset($_SESSION['login_user'])){header("location: login.php");}
+    //if(!(isset($_SESSION['login_user']))){header("location: login.php");}
     
-    $login_user = $_SESSION['login_user'];
+    //$login_user = $_SESSION['login_user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,15 +58,17 @@
             </li>
                
             <?php
-            if(!isset($_SESSION['login_user'])){
+            if(isset($_SESSION['login_user'])){
             ?>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">게시판</a>
+              <a class="nav-link js-scroll-trigger" href="./board/index.php">게시판</a>
             </li>
-            <?php } ?>
+            <?php } 
+              else {?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="login.php">로그인</a>
             </li>
+              <?php }?>
           </ul>
         </div>
       </div>

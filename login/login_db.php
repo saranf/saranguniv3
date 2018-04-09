@@ -18,54 +18,45 @@ $psw =$_POST['psw'];
 
 echo $uname;
 echo $psw;
+echo "---------    \t\t\t";
 session_start();   //세션 시작
 
 
 
 
-    if($uname != ""){  // uid값이 있으면
+    if($uname != null){  // uid값이 있으면
 
 
+//$myusername=$uname; 
 
+//$mypassword=$psw; 
 
+//echo "$myusername.test";
 
-    $myusername=$uname; 
-
-    $mypassword=$psw; 
-
- 
-
-    $sql="SELECT * FROM member WHERE m_name = '".$myusername."' AND m_goeul = '".$mypassword."'"; //아뒤랑 비번값 대조
+    $sql="SELECT * FROM member WHERE m_name = '".$uname."' AND m_goeul = '".$psw."'"; //아뒤랑 비번값 대조
 
     $result=mysqli_query($link,$sql);
 
     $count=mysqli_fetch_row($result);
         
     print_r($count);
+echo "---------    \t\t\t";
 
-    print_r($count[0],$myusername);
-     if($myusername==$count[0])
-
-    {
+    print_r($count[0],$uname);
+        
+     if($uname==$count[0]){
 
         //session_register("uname");
 
-        $_SESSION['login_user']=$myusername;
-
+        $_SESSION['login_user']=$uname;
     
-          if(!isset($_SESSION['login_user'])){header("location: ../index.php");}
-            
+        if(isset($_SESSION['login_user'])){header("location: ../index.php");}
+     }
+    
 
-    }
-
-    else 
-
-    {
-
+    else{
         $error="Your Login Name or Password is invalid";
-
     }
-
 
 
 }
